@@ -1,5 +1,6 @@
 # Proyecto creado por Eva María Hoyo de la Cruz, TongTong Xu y Antonio Francisco Roldan Martín
 import numpy as np
+import cv2
 
 mascaraStop = np.array([[0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0],
                         [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0],
@@ -256,4 +257,4 @@ def calcularsennalcorrecta(auxiliarsumamascarastop, auxiliarsumamascarapeligro, 
             variablesennal = 2
         else:
             variablesennal = 4
-    return score, variablesennal
+    return (int(score*100/255)), variablesennal
