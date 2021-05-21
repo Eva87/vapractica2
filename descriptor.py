@@ -1,5 +1,6 @@
 import cv2
-class descriptor():
+class descriptorVC():
+
     def creacionHOGDescriptor():
         winSize = (20, 20)
         blockSize = (10, 10)

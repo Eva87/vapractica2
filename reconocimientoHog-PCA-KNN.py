@@ -1,15 +1,17 @@
-#Ejecucion basica programa segun enunciado HOGDescriptor-LDA+Bayesiano con Gaussianas de Sklearn
+# Programa segun HOGDescriptor-PCA-KNN
 from aprendizaje import *
 from descriptor import *
-from reconocimiento import reconocimiento
+from reconocimiento import reconocimiento, devolverResultado
 from reduccionDimension import reduccionDimension
 
 descrip = descriptorVC.creacionHOGDescriptor()
 mX,mY = aprendizaje.entrenarClasificador('./train_recortadas',descrip)
-ctf,xR = reduccionDimension.reducirDimensionalidadLDA(mX,mY)
+xR = reduccionDimension.reducirDimensionalidadPCA(mX,mY)
+aprendizaje.grafico(xR,mY)
 listaDirectorio = os.listdir('./test_reconocimiento')
 
 for i in range(len(listaDirectorio)):
     if(listaDirectorio[i]!=".directory"):
         print(listaDirectorio[i]+": ")
-        clase = reconocimiento.reconocimientoSignal('./test_reconocimiento/'+listaDirectorio[i],descrip,ctf)
+        clase = reconocimiento.reconocimientoKNN('./test_reconocimiento/'+listaDirectorio[i],descrip,xR,mY)
+        devolverResultado(clase)
