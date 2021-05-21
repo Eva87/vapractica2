@@ -1,10 +1,11 @@
 import numpy as np
 import switch as switch
 
-from prueba import filtradoImg
+from aprendizaje import filtradoImg
 
 class reconocimiento():
     def reconocimientoSignal(ruta, descrip, rd):
+        print("Leyendo: "+ ruta)
         t = np.transpose(descrip.compute(filtradoImg(ruta)))
         resultado = rd.predict(t)
         iSignal = resultado[0]
