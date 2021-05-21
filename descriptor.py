@@ -1,6 +1,6 @@
 import cv2
 class descriptor():
-    def creacionHOGDescriptor(self):
+    def creacionHOGDescriptor():
         winSize = (20, 20)
         blockSize = (10, 10)
         blockStride = (5, 5)
@@ -13,6 +13,6 @@ class descriptor():
         gammaCorrection = 1
         nlevels = 64
         signedGradient = True
-        descriptor = cv2.HOGDescriptor(winSize, blockSize, blockStride, cellSize, nbins, derivAperture, winSigma,
+        descrip = cv2.HOGDescriptor(winSize, blockSize, blockStride, cellSize, nbins, derivAperture, winSigma,
                                        histogramNormType, L2HysThreshold, gammaCorrection, nlevels, signedGradient)
-        return descriptor
+        return descrip
