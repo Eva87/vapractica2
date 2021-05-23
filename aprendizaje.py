@@ -10,6 +10,7 @@ class aprendizaje():
         listaDirectorio = os.listdir(ruta)
         X = []
         Y = []
+        lClases = []
         for i in range(len(listaDirectorio)):
             # Almacenamos el valor de y segun tipo de señal
             if(listaDirectorio[i]!= '.DS_Store'):

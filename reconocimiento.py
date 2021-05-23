@@ -21,6 +21,13 @@ class reconocimiento():
         iSignal = resultado[0]
         return iSignal
 
+    def reconocimientoEuclideo(ruta,descrip,pX,pY):
+        print("Leyendo: " + ruta)
+        t = np.transpose(descrip.compute(filtradoImg(ruta)))
+        t = t[0]
+        distancia,resultado = clasificador.clasificadorEuclideo(pX,pY,t)
+        return resultado
+
 def devolverResultado(s):
     if s < 10:
         salida ="0"+str(s)
