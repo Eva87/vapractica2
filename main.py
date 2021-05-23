@@ -1,5 +1,10 @@
 import argparse
 
+import reconocimientoBasico
+import reconocimientoHogNoneKNN
+import reconocimientoHogPCAKNN
+from reconocimientoHogPCAEuclideo import reconocimientoHOGPCAEuclideo
+
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(
@@ -15,13 +20,22 @@ if __name__ == "__main__":
 
     # Cargar los datos de entrenamiento 
     # args.train_path
+    strtrain = args.train_path
+    strtest = args.test_path
 
     #Tratamiento de los datos
 
     # Crear el clasificador 
     if args.classifier == "BAYES":
         #detector = ...
-        None
+        reconocimientoBasico.reconocimientobasico(strtrain, strtest)
+
+    elif args.classifier == "HOGKNN":
+        reconocimientoHogNoneKNN.reconocimientoHOGKNN.reconocimientohogknn(strtrain, strtest)
+    elif args.classifier == "HOGPCAKNN":
+        reconocimientoHogPCAKNN.reconocimientoHOGPCAKNN.reconocimientohogpcaknn(strtrain, strtest)
+    elif args.classifier == "HOGPCAEuclideo":
+        reconocimientoHOGPCAEuclideo.reconocimientohogpcaeuclideo(strtrain, strtest)
     else:
         raise ValueError('Tipo de clasificador incorrecto')
 

@@ -1,5 +1,4 @@
 import numpy as np
-import switch as switch
 
 from aprendizaje import filtradoImg
 from clasificador import clasificador
