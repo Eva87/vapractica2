@@ -3,6 +3,7 @@ import argparse
 import reconocimientoBasico
 import reconocimientoHogNoneKNN
 import reconocimientoHogPCAKNN
+from reconocimientoHogLDAEuclideo import reconocimientoHOGLDAEuclideo
 from reconocimientoHogPCAEuclideo import reconocimientoHOGPCAEuclideo
 
 if __name__ == "__main__":
@@ -36,6 +37,8 @@ if __name__ == "__main__":
         reconocimientoHogPCAKNN.reconocimientoHOGPCAKNN.reconocimientohogpcaknn(strtrain, strtest)
     elif args.classifier == "HOGPCAEuclideo":
         reconocimientoHOGPCAEuclideo.reconocimientohogpcaeuclideo(strtrain, strtest)
+    elif args.classifier == "HOGLDAEuclideo":
+        reconocimientoHOGLDAEuclideo.reconocimientohogdlaeuclideo(strtrain, strtest)
     else:
         raise ValueError('Tipo de clasificador incorrecto')
 
