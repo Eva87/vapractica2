@@ -33,13 +33,12 @@ class aprendizaje():
         vectorY.append(valorY)
         return vectorX, vectorY
 
-    '''def grafico(X, y):
-        # Suponiendo que son 7 clases
-        colors = ['navy', 'turquoise', 'darkorange', 'lime', 'magenta', 'yellow', 'red','bisque']
+    def grafico(X, y):
         for i in range(len(X)):
             aux = X[i]
-            plt.plot(aux[0], aux[1], '+', color=colors[y[i] - 1])
-        plt.show()'''
+            rgb = np.random.rand(3, )
+            plt.plot(aux[0], aux[1], '+', color=rgb)
+        plt.show()
 
 
 
