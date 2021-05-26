@@ -5,7 +5,6 @@ import numpy as np
 
 
 from guardarSalida import guardar
-from reconocimiento import devolverResultado
 
 import cv2
 tamannoredimension = (30, 30)
