@@ -28,11 +28,31 @@ class reconocimiento():
         distancia,resultado = clasificador.clasificadorEuclideo(pX,pY,t)
         return resultado
 
-def devolverResultado(s):
+def devolverResultado42(s):
     if s < 10:
         salida ="0"+str(s)
     else:
         salida = str(s)
+    print(salida)
+    return salida
+
+def devolverResultado7(s):
+    if s == 1:
+        salida = "Prohibido"
+    elif s == 2:
+        salida = "Peligro"
+    elif s == 3:
+        salida = "Obligacion"
+    elif s == 4:
+        salida = "Stop"
+    elif s == 5:
+        salida = "Ceda"
+    elif s == 6:
+        salida = "Calzada con prioridad"
+    elif s == 7:
+        salida = "Fin de restrincion"
+    else: print("Error asignacion a clase")
+    salida = str(s)
     print(salida)
     return salida
 
