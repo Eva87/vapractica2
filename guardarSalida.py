@@ -18,9 +18,6 @@ class guardar:
         return ()
 
     def guardarimagencarpeta(imagenCopy):
-        print("fdskjhfhkdjdshkfjfdshk")
         cadenasalidaimagen = str(datetime.datetime.now().strftime("%d%m%Y%H%M%S%f"))
-
-
         cv2.imwrite("./recortes/" + cadenasalidaimagen +".jpg", imagenCopy)
         return cadenasalidaimagen

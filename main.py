@@ -11,6 +11,8 @@ import reconocimientop7MSER
 import reconocimientoHogPCAEuclideo
 import reconocimientoHogLDAEuclideo
 from pathlib import Path
+
+
 #pip install --upgrade cv
 '''
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier BAYES
@@ -18,8 +20,10 @@ python main.py -–train_path ./train_recortadas --test_path ./test_reconocimien
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier HOGPCAKNN
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier HOGPCAEuclideo
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier HOGLDAEuclideo
-python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier Practica1MSER
-python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier Practica1Alternativa
+python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier 42MSER
+python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier 7MSER
+python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier 42Alternativa
+python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier 7Alternativa
 '''
 if __name__ == "__main__":
 
@@ -46,7 +50,7 @@ if __name__ == "__main__":
     # Crear el clasificador 
     if args.classifier == "BAYES":
         #detector = ...
-        reconocimientoBasico.reconocimientobasico(strtrain, strtest)
+        reconocimientoBasico.reconocimientoBasico.reconocimientobasico(strtrain, strtest)
 
     elif args.classifier == "HOGKNN":
         reconocimientoHogNoneKNN.reconocimientoHOGKNN.reconocimientohogknn(strtrain, strtest)
@@ -56,14 +60,14 @@ if __name__ == "__main__":
         reconocimientoHogPCAEuclideo.reconocimientoHOGPCAEuclideo.reconocimientohogpcaeuclideo(strtrain, strtest)
     elif args.classifier == "HOGLDAEuclideo":
         reconocimientoHogLDAEuclideo.reconocimientoHOGLDAEuclideo.reconocimientohogldaeuclideo(strtrain, strtest)
-    elif args.classifier == "Practica17MSER":
-        reconocimientop7MSER.reconocimientop7mser(strtrain, strtest)
-    elif args.classifier == "Practica142MSER":
-        reconocimientop42MSER.reconocimientop42mser(strtrain, strtest)
-    elif args.classifier == "Practica17Alternativa":
-        reconocimientop7Alternativa.reconocimientop7alternativa(strtrain, strtest)
-    elif args.classifier == "Practica17Alternativa":
-        reconocimientop42Alternativa.reconocimientop42alternativa(strtrain, strtest)
+    elif args.classifier == "7MSER":
+        reconocimientop7MSER.reconocimientop7MSER.reconocimientop7mser(strtrain, strtest)
+    elif args.classifier == "42MSER":
+        reconocimientop42MSER.reconocimientop42MSER.reconocimientop42mser(strtrain, strtest)
+    elif args.classifier == "7Alternativa":
+        reconocimientop7Alternativa.reconocimientop7Alternativa.reconocimientop7alternativa(strtrain, strtest)
+    elif args.classifier == "42Alternativa":
+        reconocimientop42Alternativa.reconocimientop42Alternativa.reconocimientop42alternativa(strtrain, strtest)
     else:
         raise ValueError('Tipo de clasificador incorrecto')
 
