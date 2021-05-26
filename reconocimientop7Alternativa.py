@@ -8,8 +8,8 @@ from reconocimiento import reconocimiento, devolverResultado7
 from reduccionDimension import reduccionDimension
 from clasificador import clasificador
 
-class reconocimientop1Alternativa:
-    def reconocimientop1alternativa(carpentren, carpclasif):
+class reconocimientop7Alternativa:
+    def reconocimientop7alternativa(carpentren, carpclasif):
         descrip = descriptorVC.creacionHOGDescriptor()
         mX,mY = aprendizaje.entrenarClasificador7(carpentren,descrip)
         ctf,xR = reduccionDimension.reducirDimensionalidadLDA(mX,mY)
@@ -38,4 +38,4 @@ class reconocimientop1Alternativa:
 
 #estas dos lineas se pueden borrar o no segun queramos pq cuando se ejecute el main no haran nada
 #os.remove("resultado.txt")
-reconocimientop1Alternativa.reconocimientop1alternativa('./train_recortadas', './test_reconocimiento')
+#reconocimientop7Alternativa.reconocimientop7alternativa('./train_recortadas', './test_reconocimiento')

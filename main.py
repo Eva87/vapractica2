@@ -4,6 +4,9 @@ import os
 import reconocimientoBasico
 import reconocimientoHogNoneKNN
 import reconocimientoHogPCAKNN
+import reconocimientop42Alternativa
+import reconocimientop42MSER
+import reconocimientop7Alternativa
 import reconocimientop7MSER
 import reconocimientoHogPCAEuclideo
 import reconocimientoHogLDAEuclideo
@@ -53,8 +56,14 @@ if __name__ == "__main__":
         reconocimientoHogPCAEuclideo.reconocimientoHOGPCAEuclideo.reconocimientohogpcaeuclideo(strtrain, strtest)
     elif args.classifier == "HOGLDAEuclideo":
         reconocimientoHogLDAEuclideo.reconocimientoHOGLDAEuclideo.reconocimientohogldaeuclideo(strtrain, strtest)
-    elif args.classifier == "Practica1MSER":
-        reconocimientop7MSER.reconocimientop1mser(strtrain, strtest)
+    elif args.classifier == "Practica17MSER":
+        reconocimientop7MSER.reconocimientop7mser(strtrain, strtest)
+    elif args.classifier == "Practica142MSER":
+        reconocimientop42MSER.reconocimientop42mser(strtrain, strtest)
+    elif args.classifier == "Practica17Alternativa":
+        reconocimientop7Alternativa.reconocimientop7alternativa(strtrain, strtest)
+    elif args.classifier == "Practica17Alternativa":
+        reconocimientop42Alternativa.reconocimientop42alternativa(strtrain, strtest)
     else:
         raise ValueError('Tipo de clasificador incorrecto')
 
