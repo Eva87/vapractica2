@@ -4,7 +4,7 @@
 import guardarSalida
 from aprendizaje import *
 from descriptor import *
-from reconocimiento import reconocimiento, devolverResultado
+from reconocimiento import reconocimiento, devolverResultado42
 from reduccionDimension import reduccionDimension
 
 class reconocimientoHOGPCAKNN:
@@ -21,7 +21,7 @@ class reconocimientoHOGPCAKNN:
                 print(listaDirectorio[i]+": ")
                 strin=carpclasif+'/'+listaDirectorio[i]
                 clase = reconocimiento.reconocimientoKNN(strin,descrip,xR,mY)
-                result=devolverResultado(clase)
+                result=devolverResultado42(clase)
                 guardarSalida.guardar.salidafichero(strin, result)
 
 

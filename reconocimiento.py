@@ -52,7 +52,6 @@ def devolverResultado7(s):
     elif s == 7:
         salida = "Fin de restrincion"
     else: print("Error asignacion a clase")
-    salida = str(s)
     print(salida)
     return salida
 

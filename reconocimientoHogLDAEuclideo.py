@@ -4,7 +4,7 @@
 import guardarSalida
 from aprendizaje import *
 from descriptor import *
-from reconocimiento import reconocimiento, devolverResultado
+from reconocimiento import reconocimiento, devolverResultado42
 from reduccionDimension import reduccionDimension
 
 
@@ -45,7 +45,7 @@ class reconocimientoHOGLDAEuclideo:
                 print(listaDirectorio[i] + ": ")
                 strin = carpclasif + '/' + listaDirectorio[i]
                 clase = reconocimiento.reconocimientoEuclideo(strin, descrip, centrosX, centrosY)
-                result = devolverResultado(clase)
+                result = devolverResultado42(clase)
                 guardarSalida.guardar.salidafichero(strin, result)
 
         for x, y in zip(centrosX, centrosY):

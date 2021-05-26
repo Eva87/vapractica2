@@ -4,7 +4,7 @@ import os
 import reconocimientoBasico
 import reconocimientoHogNoneKNN
 import reconocimientoHogPCAKNN
-import reconocimientop1MSER
+import reconocimientop7MSER
 import reconocimientoHogPCAEuclideo
 import reconocimientoHogLDAEuclideo
 from pathlib import Path
@@ -54,7 +54,7 @@ if __name__ == "__main__":
     elif args.classifier == "HOGLDAEuclideo":
         reconocimientoHogLDAEuclideo.reconocimientoHOGLDAEuclideo.reconocimientohogldaeuclideo(strtrain, strtest)
     elif args.classifier == "Practica1MSER":
-        reconocimientop1MSER.reconocimientop1mser(strtrain, strtest)
+        reconocimientop7MSER.reconocimientop1mser(strtrain, strtest)
     else:
         raise ValueError('Tipo de clasificador incorrecto')
 
