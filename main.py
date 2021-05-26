@@ -1,6 +1,9 @@
 import argparse
+import glob
 import os
+import shutil
 
+import guardarSalida
 import reconocimientoBasico
 import reconocimientoHogNoneKNN
 import reconocimientoHogPCAKNN
@@ -44,6 +47,10 @@ if __name__ == "__main__":
     strtest = args.test_path
 
     #Tratamiento de los datos
+    if os.path.exists("./recortes"):
+       if os.path.exists("./recortes"):
+            shutil.rmtree("./recortes")
+    os.mkdir("./recortes")
     if os.path.exists("resultado.txt"):
         os.remove("resultado.txt")
 
@@ -63,13 +70,14 @@ if __name__ == "__main__":
     elif args.classifier == "7MSER":
         reconocimientop7MSER.reconocimientop7MSER.reconocimientop7mser(strtrain, strtest)
     elif args.classifier == "42MSER":
-        reconocimientop42MSER.reconocimientop42MSER.reconocimientop42mser(strtrain, strtest)
+        borrar=reconocimientop42MSER.reconocimientop42MSER.reconocimientop42mser(strtrain, strtest)
     elif args.classifier == "7Alternativa":
         reconocimientop7Alternativa.reconocimientop7Alternativa.reconocimientop7alternativa(strtrain, strtest)
     elif args.classifier == "42Alternativa":
         reconocimientop42Alternativa.reconocimientop42Alternativa.reconocimientop42alternativa(strtrain, strtest)
     else:
         raise ValueError('Tipo de clasificador incorrecto')
+
 
     # Entrenar el clasificador si es necesario ...
     # detector ...
@@ -79,7 +87,6 @@ if __name__ == "__main__":
 
     # Guardar los resultados en ficheros de texto (en el directorio donde se 
     # ejecuta el main.py) tal y como se pide en el enunciado.
-
 
 
 

@@ -21,4 +21,4 @@ class mser:
 
         # cv2.waitKey(0)
 
-        return (imagenAuxilr)
+        return
