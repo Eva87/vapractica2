@@ -20,17 +20,16 @@ class reconocimientop1MSER:
             if(listaDirectorio[i]!=".directory"):
                 print(listaDirectorio[i]+": ")
                 strin=carpclasif+'/'+listaDirectorio[i]
-                #try:
-
-                deteccionMSER.mser.MSER(strin,ctf)
-
-
-
-
-               # except:
-                   # print("errorcito")
-
+                deteccionMSER.mser.MSER(strin)
+        listaDirectorio=os.listdir("./recortes/")
+        for i in range(len(listaDirectorio)):
+            if(listaDirectorio[i]!=".directory"):
+                print(listaDirectorio[i]+": ")
+                strin=carpclasif+'/'+listaDirectorio[i]
+                clase = reconocimiento.reconocimientoBayesianoGaussianas(strin,descrip,ctf)
+                result=devolverResultado(clase)
+                guardarSalida.guardar.salidafichero(strin, result)
 
 #estas dos lineas se pueden borrar o no segun queramos pq cuando se ejecute el main no haran nada
-'''os.remove("resultado.txt")
-reconocimientop1MSER.reconocimientop1mser('./train_recortadas', './test_reconocimiento')'''
+#os.remove("resultado.txt")
+reconocimientop1MSER.reconocimientop1mser('./train_recortadas', './test_reconocimiento')

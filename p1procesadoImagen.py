@@ -1,8 +1,8 @@
 # Proyecto creado por Eva María Hoyo de la Cruz, TongTong Xu y Antonio Francisco Roldan Martín
-import cv2
 import random
 import colorsys
 import numpy as np
+import cv as cv2
 
 import guardarSalida
 from guardarSalida import *
@@ -109,4 +109,5 @@ def guardados(imagenAuxil, nombreimagee, funcionoriginar, x11, x22, y11, y22, im
     except:
         print(nombreimagee + " la imagen no funciona")
     return ()
+
 

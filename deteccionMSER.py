@@ -5,7 +5,7 @@ import cv2
 
 
 class mser:
-    def MSER(strinentradaimg,ct):
+    def MSER(strinentradaimg):
         imagen = cv2.imread(strinentradaimg)
         img_to_yuv = cv2.cvtColor(imagen, cv2.COLOR_BGR2YUV)
         img_to_yuv[:, :, 0] = cv2.equalizeHist(img_to_yuv[:, :, 0])
@@ -17,7 +17,7 @@ class mser:
         if len(contornos) > 0:
             salMSER = p1procesadoImagen.hacedordeMSER(cannybordes)
             if salMSER is not None:
-                p1procesadoImagen.recorteCorrelarSignals(contornos, imagen.copy(), imagen, "MSER", strinentradaimg,ct)
+                p1procesadoImagen.recorteCorrelarSignals(contornos, imagen.copy(), imagen, "MSER", strinentradaimg)
 
         # cv2.waitKey(0)
 
