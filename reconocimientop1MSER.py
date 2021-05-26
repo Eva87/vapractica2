@@ -11,7 +11,7 @@ from clasificador import clasificador
 class reconocimientop1MSER:
     def reconocimientop1mser(carpentren, carpclasif):
         descrip = descriptorVC.creacionHOGDescriptor()
-        mX,mY = aprendizaje.entrenarClasificador(carpentren,descrip)
+        mX,mY = aprendizaje.entrenarClasificador7(carpentren,descrip)
         ctf,xR = reduccionDimension.reducirDimensionalidadLDA(mX,mY)
         listaDirectorio = os.listdir(carpclasif)
         #aprendizaje.grafico(xR,mY)

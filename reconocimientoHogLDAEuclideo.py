@@ -11,7 +11,7 @@ from reduccionDimension import reduccionDimension
 class reconocimientoHOGLDAEuclideo:
     def reconocimientohogldaeuclideo(carpentren, carpclasif):
         descrip = descriptorVC.creacionHOGDescriptor()
-        mX, mY = aprendizaje.entrenarClasificador(carpentren, descrip)
+        mX, mY = aprendizaje.entrenarClasificador42(carpentren, descrip)
         clf, xR = reduccionDimension.reducirDimensionalidadLDA(mX, mY)
 
         zz = [[], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [], [],

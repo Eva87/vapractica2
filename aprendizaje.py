@@ -6,7 +6,7 @@ import os
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 class aprendizaje():
 
-    def entrenarClasificador(ruta, descrip):
+    def entrenarClasificador42(ruta, descrip):
 
         listaDirectorio = os.listdir(ruta)
         X = []
@@ -25,6 +25,43 @@ class aprendizaje():
 
         return X,Y
 
+    def entrenarClasificador7(ruta, descrip):
+        prohibido = [0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 15, 16, 17]
+        peligro = [11, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+        stop = [14]
+        obligacion = [33, 34, 35, 36, 37, 38, 39, 40]
+        finRestriccion = [6, 32, 41, 42]
+        calzadaPrioridad = [12]
+        ceda = [13]
+
+        listaDirectorio = os.listdir(ruta)
+        X = []
+        Y = []
+        for i in range(len(listaDirectorio)):
+            # Almacenamos el valor de y segun tipo de señal
+            if (listaDirectorio[i] != '.DS_Store'):
+                if int(listaDirectorio[i]) in prohibido:
+                    z = 1
+                elif int(listaDirectorio[i]) in peligro:
+                    z = 2
+                elif int(listaDirectorio[i]) in obligacion:
+                    z = 3
+                elif int(listaDirectorio[i]) == 14:
+                    z = 4
+                elif int(listaDirectorio[i]) == 13:
+                    z = 5
+                elif int(listaDirectorio[i]) == 12:
+                    z = 6
+                elif int(listaDirectorio[i]) in finRestriccion:
+                    z = 7
+                else:
+                    print("Ha ocurrido un error en la carga de datos en carpeta: " + listaDirectorio[i])
+
+                lCarpeta = os.listdir(ruta + '/' + listaDirectorio[i])
+                for j in range(len(lCarpeta)):
+                    X, Y = aprendizaje.calculoxy(ruta + '/' + listaDirectorio[i] + '/' + lCarpeta[j], z, X, Y, descrip)
+
+        return X,Y
 
     def calculoxy(ruta, valorY, vectorX, vectorY, descrip):
         t = np.transpose(descrip.compute(filtradoImg(ruta)))

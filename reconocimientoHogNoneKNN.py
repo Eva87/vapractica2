@@ -10,7 +10,7 @@ from reduccionDimension import reduccionDimension
 class reconocimientoHOGKNN:
     def reconocimientohogknn (carpentren, carpclasif):
         descrip = descriptorVC.creacionHOGDescriptor()
-        mX,mY = aprendizaje.entrenarClasificador(carpentren,descrip)
+        mX,mY = aprendizaje.entrenarClasificador42(carpentren,descrip)
         listaDirectorio = os.listdir(carpclasif)
         for i in range(len(listaDirectorio)):
             if(listaDirectorio[i]!=".directory"):

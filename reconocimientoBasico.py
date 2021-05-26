@@ -9,7 +9,7 @@ from reduccionDimension import reduccionDimension
 class reconocimientoBasico:
     def reconocimientobasico(carpentren, carpclasif):
         descrip = descriptorVC.creacionHOGDescriptor()
-        mX,mY = aprendizaje.entrenarClasificador(carpentren,descrip)
+        mX,mY = aprendizaje.entrenarClasificador42(carpentren,descrip)
         ctf,xR = reduccionDimension.reducirDimensionalidadLDA(mX,mY)
         listaDirectorio = os.listdir(carpclasif)
         #aprendizaje.grafico(xR,mY)

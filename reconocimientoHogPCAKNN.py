@@ -11,7 +11,7 @@ class reconocimientoHOGPCAKNN:
     def reconocimientohogpcaknn (carpentren, carpclasif):
 
         descrip = descriptorVC.creacionHOGDescriptor()
-        mX,mY = aprendizaje.entrenarClasificador(carpentren,descrip)
+        mX,mY = aprendizaje.entrenarClasificador42(carpentren,descrip)
         xR = reduccionDimension.reducirDimensionalidadPCA(mX,mY)
         '''aprendizaje.grafico(xR,mY)'''
         listaDirectorio = os.listdir(carpclasif)
