@@ -1,10 +1,14 @@
 import argparse
+import os
 
 import reconocimientoBasico
 import reconocimientoHogNoneKNN
 import reconocimientoHogPCAKNN
-from reconocimientoHogLDAEuclideo import reconocimientoHOGLDAEuclideo
-from reconocimientoHogPCAEuclideo import reconocimientoHOGPCAEuclideo
+import reconocimientop1MSER
+import reconocimientoHogPCAEuclideo
+import reconocimientoHogLDAEuclideo
+from pathlib import Path
+
 
 if __name__ == "__main__":
 
@@ -25,6 +29,7 @@ if __name__ == "__main__":
     strtest = args.test_path
 
     #Tratamiento de los datos
+    os.remove("resultado.txt")
 
     # Crear el clasificador 
     if args.classifier == "BAYES":
@@ -36,9 +41,11 @@ if __name__ == "__main__":
     elif args.classifier == "HOGPCAKNN":
         reconocimientoHogPCAKNN.reconocimientoHOGPCAKNN.reconocimientohogpcaknn(strtrain, strtest)
     elif args.classifier == "HOGPCAEuclideo":
-        reconocimientoHOGPCAEuclideo.reconocimientohogpcaeuclideo(strtrain, strtest)
+        reconocimientoHogPCAEuclideo.reconocimientoHOGPCAEuclideo.reconocimientohogpcaeuclideo(strtrain, strtest)
     elif args.classifier == "HOGLDAEuclideo":
-        reconocimientoHOGLDAEuclideo.reconocimientohogdlaeuclideo(strtrain, strtest)
+        reconocimientoHogLDAEuclideo.reconocimientoHOGLDAEuclideo.reconocimientohogdlaeuclideo(strtrain, strtest)
+    elif args.classifier == "Practica1MSER":
+        reconocimientop1MSER.reconocimientop1mser(strtrain, strtest)
     else:
         raise ValueError('Tipo de clasificador incorrecto')
 

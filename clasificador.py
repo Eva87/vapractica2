@@ -1,3 +1,4 @@
+# Proyecto creado por Eva María Hoyo de la Cruz, TongTong Xu y Antonio Francisco Roldan Martín
 import cv2
 import numpy as np
 from sklearn.neighbors import KNeighborsClassifier

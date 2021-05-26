@@ -1,3 +1,5 @@
+# Proyecto creado por Eva María Hoyo de la Cruz, TongTong Xu y Antonio Francisco Roldan Martín
+
 class guardar:
 
     def salidafichero(noment, nomsal):

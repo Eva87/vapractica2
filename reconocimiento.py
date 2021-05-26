@@ -1,3 +1,4 @@
+# Proyecto creado por Eva María Hoyo de la Cruz, TongTong Xu y Antonio Francisco Roldan Martín
 import numpy as np
 
 from aprendizaje import filtradoImg

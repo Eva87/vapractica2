@@ -1,3 +1,4 @@
+# Proyecto creado por Eva María Hoyo de la Cruz, TongTong Xu y Antonio Francisco Roldan Martín
 #Ejecucion basica programa segun enunciado HOGDescriptor-LDA+Bayesiano con Gaussianas de Sklearn
 import guardarSalida
 from aprendizaje import *
@@ -21,4 +22,6 @@ class reconocimientoBasico:
                 result=devolverResultado(clase)
                 guardarSalida.guardar.salidafichero(strin, result)
 
+#estas dos lineas se pueden borrar o no segun queramos pq cuando se ejecute el main no haran nada
+os.remove("resultado.txt")
 reconocimientoBasico.reconocimientobasico('./train_recortadas', './test_reconocimiento')

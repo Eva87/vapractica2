@@ -1,3 +1,5 @@
+# Proyecto creado por Eva María Hoyo de la Cruz, TongTong Xu y Antonio Francisco Roldan Martín
+
 # Programa segun HOGDescriptor-PCA-KNN
 import guardarSalida
 from aprendizaje import *
@@ -23,4 +25,6 @@ class reconocimientoHOGPCAKNN:
                 guardarSalida.guardar.salidafichero(strin, result)
 
 
+#estas dos lineas se pueden borrar o no segun queramos pq cuando se ejecute el main no haran nada
+os.remove("resultado.txt")
 reconocimientoHOGPCAKNN.reconocimientohogpcaknn('./train_recortadas', './test_reconocimiento')
