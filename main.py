@@ -9,7 +9,15 @@ import reconocimientoHogPCAEuclideo
 import reconocimientoHogLDAEuclideo
 from pathlib import Path
 
-
+'''
+python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier BAYES
+python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier HOGKNN
+python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier HOGPCAKNN
+python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier HOGPCAEuclideo
+python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier HOGLDAEuclideo
+python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier Practica1MSER
+python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier Practica1Alternativa
+'''
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(
@@ -29,7 +37,8 @@ if __name__ == "__main__":
     strtest = args.test_path
 
     #Tratamiento de los datos
-    os.remove("resultado.txt")
+    if os.path.exists("resultado.txt"):
+        os.remove("resultado.txt")
 
     # Crear el clasificador 
     if args.classifier == "BAYES":
@@ -43,7 +52,7 @@ if __name__ == "__main__":
     elif args.classifier == "HOGPCAEuclideo":
         reconocimientoHogPCAEuclideo.reconocimientoHOGPCAEuclideo.reconocimientohogpcaeuclideo(strtrain, strtest)
     elif args.classifier == "HOGLDAEuclideo":
-        reconocimientoHogLDAEuclideo.reconocimientoHOGLDAEuclideo.reconocimientohogdlaeuclideo(strtrain, strtest)
+        reconocimientoHogLDAEuclideo.reconocimientoHOGLDAEuclideo.reconocimientohogldaeuclideo(strtrain, strtest)
     elif args.classifier == "Practica1MSER":
         reconocimientop1MSER.reconocimientop1mser(strtrain, strtest)
     else:

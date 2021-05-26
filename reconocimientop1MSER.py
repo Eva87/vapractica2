@@ -32,5 +32,5 @@ class reconocimientop1MSER:
 
 
 #estas dos lineas se pueden borrar o no segun queramos pq cuando se ejecute el main no haran nada
-os.remove("resultado.txt")
-reconocimientop1MSER.reconocimientop1mser('./train_recortadas', './test_reconocimiento')
+'''os.remove("resultado.txt")
+reconocimientop1MSER.reconocimientop1mser('./train_recortadas', './test_reconocimiento')'''
