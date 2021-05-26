@@ -1,5 +1,5 @@
 # Proyecto creado por Eva María Hoyo de la Cruz, TongTong Xu y Antonio Francisco Roldan Martín
-
+import deteccionAlternativa
 import deteccionMSER
 import guardarSalida
 from aprendizaje import *
@@ -8,8 +8,8 @@ from reconocimiento import reconocimiento, devolverResultado
 from reduccionDimension import reduccionDimension
 from clasificador import clasificador
 
-class reconocimientop1MSER:
-    def reconocimientop1mser(carpentren, carpclasif):
+class reconocimientop1Alternativa:
+    def reconocimientop1alternativa(carpentren, carpclasif):
         descrip = descriptorVC.creacionHOGDescriptor()
         mX,mY = aprendizaje.entrenarClasificador7(carpentren,descrip)
         ctf,xR = reduccionDimension.reducirDimensionalidadLDA(mX,mY)
@@ -20,7 +20,7 @@ class reconocimientop1MSER:
             if(listaDirectorio[i]!=".directory"):
                 print(listaDirectorio[i]+": ")
                 strin=carpclasif+'/'+listaDirectorio[i]
-                deteccionMSER.mser.MSER(strin)
+                deteccionAlternativa.alternativa.Alternativa(strin)
         try:
             os.mkdir("./recortes")
             print()
@@ -38,4 +38,4 @@ class reconocimientop1MSER:
 
 #estas dos lineas se pueden borrar o no segun queramos pq cuando se ejecute el main no haran nada
 #os.remove("resultado.txt")
-reconocimientop1MSER.reconocimientop1mser('./train_recortadas', './test_reconocimiento')
+reconocimientop1Alternativa.reconocimientop1alternativa('./train_recortadas', './test_reconocimiento')

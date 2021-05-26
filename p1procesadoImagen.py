@@ -2,12 +2,12 @@
 import random
 import colorsys
 import numpy as np
-import cv as cv2
 
-import guardarSalida
-from guardarSalida import *
+
+from guardarSalida import guardar
 from reconocimiento import devolverResultado
 
+import cv2
 tamannoredimension = (30, 30)
 
 
@@ -76,7 +76,8 @@ def recorteCorrelarSignals(contornosimagenentrada, imagenCopia, imgorigin, funci
                 if x1 - x2 > 0 and y1 - y2 > 0:
                     # Aqui recortamos la imagen encontrada como contorno
                     imagenAuxiliar = imgorigin[x2:x1, y2:y1]
-                    imagenCopia=guardados(imagenAuxiliar, nombreimageent, funcionoriginaria, x1, x2, y1, y2, imagenCopia)
+                    if imagenAuxiliar is not None:
+                        guardar.guardarimagencarpeta(imagenAuxiliar)
         else:
             x, y, w, h = cv2.boundingRect(con)
             x = x - 5
@@ -95,19 +96,10 @@ def recorteCorrelarSignals(contornosimagenentrada, imagenCopia, imgorigin, funci
                 if w > 0 and h > 0:
                     # Aqui recortamos la imagen encontrada con rectangulo
                     imagenAuxiliar = imgorigin[y:y2, x:x2]
-                    imagenCopia=guardados(imagenAuxiliar, nombreimageent, funcionoriginaria, x, x2, y, y2, imagenCopia)
+                    if imagenAuxiliar is not None:
+                        guardar.guardarimagencarpeta(imagenAuxiliar)
     return ()
 
 
-def guardados(imagenAuxil, nombreimagee, funcionoriginar, x11, x22, y11, y22, imagenCopi):
-    try:
-        if imagenAuxil is not None:
-            # redimensionamos imagen de la señal filtrada a 25*25
-            '''redimensionado = cv2.resize(imagenAuxil, tamannoredimension, interpolation=cv2.INTER_AREA)
-            (puntos, variablesen) = correlarMascara(redimensionado)'''
-            guardarSalida.guardarimagencarpeta(funcionoriginar, nombreimagee, imagenAuxil)
-    except:
-        print(nombreimagee + " la imagen no funciona")
-    return ()
 
 

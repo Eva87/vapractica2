@@ -8,7 +8,7 @@ import reconocimientop1MSER
 import reconocimientoHogPCAEuclideo
 import reconocimientoHogLDAEuclideo
 from pathlib import Path
-
+#pip install --upgrade cv
 '''
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier BAYES
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier HOGKNN

@@ -1,6 +1,7 @@
 # Proyecto creado por Eva María Hoyo de la Cruz, TongTong Xu y Antonio Francisco Roldan Martín
 import datetime
-import cv as cv2
+import os
+import cv2
 
 class guardar:
 
@@ -16,14 +17,10 @@ class guardar:
         ficherosalida.close()
         return ()
 
-    def guardarimagencarpeta(imagensalida, variablesenl, orig, nomimageent, imagenCopy):
+    def guardarimagencarpeta(imagenCopy):
+        print("fdskjhfhkdjdshkfjfdshk")
         cadenasalidaimagen = str(datetime.datetime.now().strftime("%d%m%Y%H%M%S%f"))
-        # nomsal = nomimageent[7:12]
-        nomsal = nomimageent.replace("/", "")
-        nomsal = nomsal.replace("\\", "")
-        nomsal = nomsal.replace(".", "")
-        #cadenasalidaimagen = "./recortes" + "/" + nomimageent + cadenasalidaimagen + ".jpg"
 
 
-        cv2.imwrite("./recortes/" + cadenasalidaimagen + ".jpg", imagenCopy)
-        return
+        cv2.imwrite("./recortes/" + cadenasalidaimagen +".jpg", imagenCopy)
+        return cadenasalidaimagen
