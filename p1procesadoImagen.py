@@ -97,7 +97,7 @@ def recorteCorrelarSignals(contornosimagenentrada, imagenCopia, imgorigin, funci
                     imagenAuxiliar = imgorigin[y:y2, x:x2]
                     if imagenAuxiliar is not None:
                         guardar.guardarimagencarpeta(imagenAuxiliar)
-    return ()
+    return
 
 
 

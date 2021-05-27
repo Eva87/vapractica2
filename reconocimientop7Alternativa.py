@@ -21,12 +21,7 @@ class reconocimientop7Alternativa:
                 print(listaDirectorio[i]+": ")
                 strin=carpclasif+'/'+listaDirectorio[i]
                 deteccionAlternativa.alternativa.Alternativa(strin)
-        try:
-            os.mkdir("./recortes")
-            print()
-        except:
-            # print("ya esta creado")
-            print()
+
         listarecortes=os.listdir("./recortes")
         for i in range(len(listarecortes)):
             if(listarecortes[i]!=".directory"):

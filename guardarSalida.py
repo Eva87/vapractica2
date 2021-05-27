@@ -1,6 +1,6 @@
 # Proyecto creado por Eva María Hoyo de la Cruz, TongTong Xu y Antonio Francisco Roldan Martín
 import datetime
-import os
+
 import cv2
 
 class guardar:
@@ -21,3 +21,8 @@ class guardar:
         cadenasalidaimagen = str(datetime.datetime.now().strftime("%d%m%Y%H%M%S%f"))
         cv2.imwrite("./recortes/" + cadenasalidaimagen +".jpg", imagenCopy)
         return cadenasalidaimagen
+
+    def guardarimagencarpetaframes(imagenCopy,frame):
+        cv2.imwrite("./recortes/" + frame +".jpg", imagenCopy)
+        return frame
+

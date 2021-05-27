@@ -18,15 +18,25 @@ from pathlib import Path
 
 #pip install --upgrade cv
 '''
+ejercicio 1 
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier BAYES
+
+ejercicio 2 alternativas
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier HOGKNN
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier HOGPCAKNN
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier HOGPCAEuclideo
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier HOGLDAEuclideo
+
+ejercicio 3
+de la practica 1 con mser y la alternativa ambas con el clasificador de 42 señales y de 7 señales 
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier 42MSER
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier 7MSER
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier 42Alternativa
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier 7Alternativa
+
+ejercicio 3 video
+
+
 '''
 if __name__ == "__main__":
 
@@ -75,7 +85,10 @@ if __name__ == "__main__":
         reconocimientop7Alternativa.reconocimientop7Alternativa.reconocimientop7alternativa(strtrain, strtest)
     elif args.classifier == "42Alternativa":
         reconocimientop42Alternativa.reconocimientop42Alternativa.reconocimientop42alternativa(strtrain, strtest)
-    else:
+    elif args.classifier == "42mservideo":
+        reconocimientop42Alternativa.reconocimientop42Alternativa.reconocimientop42alternativa(strtrain, strtest)
+
+else:
         raise ValueError('Tipo de clasificador incorrecto')
 
 

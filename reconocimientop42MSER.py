@@ -21,12 +21,7 @@ class reconocimientop42MSER:
                 print(listaDirectorio[i]+": ")
                 strin=carpclasif+'/'+listaDirectorio[i]
                 deteccionMSER.mser.MSER(strin)
-        try:
-            os.mkdir("./recortes")
-            print()
-        except:
-            # print("ya esta creado")
-            print()
+
         listarecortes=os.listdir("./recortes")
         for i in range(len(listarecortes)):
             if(listarecortes[i]!=".directory"):
@@ -36,6 +31,7 @@ class reconocimientop42MSER:
                 result=devolverResultado42(clase)
                 guardarSalida.guardar.salidafichero(strin, result)
 
+        return
 #estas dos lineas se pueden borrar o no segun queramos pq cuando se ejecute el main no haran nada
 #os.remove("resultado.txt")
 #reconocimientop42MSER.reconocimientop42mser('./train_recortadas', './test_reconocimiento')
