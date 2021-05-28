@@ -18,11 +18,11 @@ class reconocimientoHOGPCAKNN:
 
         for i in range(len(listaDirectorio)):
             if(listaDirectorio[i]!=".directory"):
-                print(listaDirectorio[i]+": ")
-                strin=carpclasif+'/'+listaDirectorio[i]
-                clase = reconocimiento.reconocimientoKNN(strin,descrip,xR,mY)
-                result=devolverResultado42(clase)
-                guardarSalida.guardar.salidafichero(strin, result)
+                    print(listaDirectorio[i]+": ")
+                    strin=carpclasif+'/'+listaDirectorio[i]
+                    clase,classif = reconocimiento.reconocimientoKNN(strin,descrip,xR,mY)
+                    result =devolverResultado42(clase)
+                    guardarSalida.guardar.salidafichero(strin, result)
 
 
 #estas dos lineas se pueden borrar o no segun queramos pq cuando se ejecute el main no haran nada

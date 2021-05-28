@@ -7,7 +7,7 @@ class clasificador():
     def clasificadorKNN(X,y,t):
         neigh = KNeighborsClassifier(n_neighbors=3)
         neigh.fit(X, y)
-        return neigh.predict(t)
+        return neigh.predict(t),neigh
 
     def clasificadorBayesianoGaussianas(rd,t):
         return rd.predict(t)

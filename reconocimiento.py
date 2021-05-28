@@ -17,9 +17,9 @@ class reconocimiento():
     def reconocimientoKNN(ruta,descrip,X,y):
         print("Leyendo: " + ruta)
         t = np.transpose(descrip.compute(filtradoImg(ruta)))
-        resultado = clasificador.clasificadorKNN(X,y,t)
+        resultado,classf = clasificador.clasificadorKNN(X,y,t)
         iSignal = resultado[0]
-        return iSignal
+        return iSignal,classf
 
     def reconocimientoEuclideo(ruta,descrip,pX,pY):
         print("Leyendo: " + ruta)
