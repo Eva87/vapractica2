@@ -1,8 +1,6 @@
+# Proyecto creado por Eva María Hoyo de la Cruz, TongTong Xu y Antonio Francisco Roldan Martín
 import shutil
-
 import cv2
-
-import deteccionMSER
 import guardarSalida
 from aprendizaje import *
 from descriptor import *
@@ -26,8 +24,7 @@ class reconocimientovideoBayes:
         mX,mY = aprendizaje.entrenarClasificador42(carpentren,descrip)
         ctf,xR = reduccionDimension.reducirDimensionalidadLDA(mX,mY)
 
-
-        capturadelvideo=cv2.VideoCapture('./videos/video2.mp4')
+        capturadelvideo=cv2.VideoCapture('./video.mp4')
         fotogramaactual=0
 
         while True:
@@ -51,7 +48,7 @@ class reconocimientovideoBayes:
                         cv2.imshow('nombre', imagen)
                         cv2.imwrite(nombre, imagen)
                     fotogramaactual+=1
-                    cv2.waitKey(35)
+                    cv2.waitKey(5)
                 except:
                     print()
             else:
@@ -59,4 +56,6 @@ class reconocimientovideoBayes:
         capturadelvideo.release()
         cv2.destroyAllWindows()
 
-reconocimientovideoBayes.reconocimientovideobayes('./train_recortadas')
+        guardarSalida.guardar.guardarvideo("bayes")
+
+#reconocimientovideoBayes.reconocimientovideobayes('./train_recortadas')

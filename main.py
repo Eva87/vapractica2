@@ -17,9 +17,9 @@ from pathlib import Path
 
 
 #pip install --upgrade cv
-from reconocimientovideo42alternativa import reconocimientovideo42Alternativa
-from reconocimientovideo42mser import reconocimientovideo42MSER
-from reconocimientovideobayes import reconocimientovideoBayes
+import reconocimientovideo42mser
+import reconocimientovideo42alternativa
+import reconocimientovideobayes
 
 '''
 ejercicio 1 
@@ -93,11 +93,11 @@ if __name__ == "__main__":
     elif args.classifier == "42Alternativa":
         reconocimientop42Alternativa.reconocimientop42Alternativa.reconocimientop42alternativa(strtrain, strtest)
     elif args.classifier == "42altervideo":
-        reconocimientovideo42Alternativa.reconocimientovideo42alternativa(strtrain)
+        reconocimientovideo42alternativa.reconocimientovideo42Alternativa.reconocimientovideo42alternativa(strtrain)
     elif args.classifier == "42mservideo":
-        reconocimientovideo42MSER.reconocimientovideo42MSER.reconocimientovideo42mser(strtrain)
+        reconocimientovideo42mser.reconocimientovideo42MSER.reconocimientovideo42mser(strtrain)
     elif args.classifier == "42bayesvideo":
-        reconocimientovideoBayes.reconocimientovideoBayes.reconocimientovideobayes(strtrain)
+        reconocimientovideobayes.reconocimientovideoBayes.reconocimientovideobayes(strtrain)
     else:
         raise ValueError('Tipo de clasificador incorrecto')
 

@@ -1,5 +1,6 @@
 # Proyecto creado por Eva María Hoyo de la Cruz, TongTong Xu y Antonio Francisco Roldan Martín
 import datetime
+import os
 
 import cv2
 
@@ -26,3 +27,18 @@ class guardar:
         cv2.imwrite("./recortes/" + frame +".jpg", imagenCopy)
         return frame
 
+    def guardarvideo(nombre):
+
+        listaDirec = os.listdir("./fotogramas")
+        aux = cv2.imread("./fotogramas/fotograma0.jpg")
+        alto, ancho, canales = aux.shape
+        salidavideo = cv2.VideoWriter('salidavideosennales'+nombre+'.avi', cv2.VideoWriter_fourcc(*'DIVX'), 20.0,
+                                      (ancho, alto))
+        longitudfotogramas = len(listaDirec)
+        i = 0
+        while i < longitudfotogramas:
+            strin = cv2.imread("./fotogramas/fotograma" + str(i) + ".jpg")
+            salidavideo.write(strin)
+            i += 1
+
+        salidavideo.release()

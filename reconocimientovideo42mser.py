@@ -1,3 +1,4 @@
+# Proyecto creado por Eva María Hoyo de la Cruz, TongTong Xu y Antonio Francisco Roldan Martín
 import shutil
 
 import deteccionMSER
@@ -22,8 +23,9 @@ class reconocimientovideo42MSER:
         mX,mY = aprendizaje.entrenarClasificador42(carpentren,descrip)
         ctf,xR = reduccionDimension.reducirDimensionalidadLDA(mX,mY)
 
-        capturadelvideo=cv2.VideoCapture('./videos/video1.mp4')
+        capturadelvideo=cv2.VideoCapture('./video.mp4')
         fotogramaactual=0
+       
         while True:
             ret,imagen=capturadelvideo.read()
             if ret==True:
@@ -31,7 +33,7 @@ class reconocimientovideo42MSER:
                 fotogramaactual+=1
                 cv2.imwrite(nombre,imagen)
                 deteccionMSER.mser.MSER(nombre)
-                #cv2.imshow('nombre', imagen)
+                cv2.imshow('nombre', imagen)
 
                 listarecortes = os.listdir("./recortes")
                 for i in range(len(listarecortes)):
@@ -65,10 +67,12 @@ class reconocimientovideo42MSER:
                         if os.path.exists("./recortes"):
                             shutil.rmtree("./recortes")
                     os.mkdir("./recortes")
-                cv2.waitKey(15)
+                cv2.waitKey(5)
             else:
                 break
         capturadelvideo.release()
         cv2.destroyAllWindows()
 
-reconocimientovideo42MSER.reconocimientovideo42mser('./train_recortadas')
+        guardarSalida.guardar.guardarvideo("mser")
+
+#reconocimientovideo42MSER.reconocimientovideo42mser('./train_recortadas')
