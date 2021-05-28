@@ -17,6 +17,10 @@ from pathlib import Path
 
 
 #pip install --upgrade cv
+from reconocimientovideo42alternativa import reconocimientovideo42Alternativa
+from reconocimientovideo42mser import reconocimientovideo42MSER
+from reconocimientovideobayes import reconocimientovideoBayes
+
 '''
 ejercicio 1 
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier BAYES
@@ -35,6 +39,9 @@ python main.py -–train_path ./train_recortadas --test_path ./test_reconocimien
 python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier 7Alternativa
 
 ejercicio 3 video
+python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier 42altervideo
+python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier 42mservideo
+python main.py -–train_path ./train_recortadas --test_path ./test_reconocimiento -–classifier 42bayesvideo
 
 
 '''
@@ -85,10 +92,13 @@ if __name__ == "__main__":
         reconocimientop7Alternativa.reconocimientop7Alternativa.reconocimientop7alternativa(strtrain, strtest)
     elif args.classifier == "42Alternativa":
         reconocimientop42Alternativa.reconocimientop42Alternativa.reconocimientop42alternativa(strtrain, strtest)
+    elif args.classifier == "42altervideo":
+        reconocimientovideo42Alternativa.reconocimientovideo42alternativa(strtrain)
     elif args.classifier == "42mservideo":
-        reconocimientop42Alternativa.reconocimientop42Alternativa.reconocimientop42alternativa(strtrain, strtest)
-
-else:
+        reconocimientovideo42MSER.reconocimientovideo42MSER.reconocimientovideo42mser(strtrain)
+    elif args.classifier == "42bayesvideo":
+        reconocimientovideoBayes.reconocimientovideoBayes.reconocimientovideobayes(strtrain)
+    else:
         raise ValueError('Tipo de clasificador incorrecto')
 
 
